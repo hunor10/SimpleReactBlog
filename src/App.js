@@ -1,35 +1,36 @@
 import Navbar from './Navbar';
 import Home from './Home';
-import { BrowserRouter as Router, Route,Switch } from 'react-router-dom'; ///cjs/react-router-dom.min';
+import { Route, Switch } from 'react-router-dom';
 import Create from './Create';
 import BlogDetails from './BlogDetails';
 import NotFound from './NotFound';
+import { useState, useEffect } from 'react';
+import useFetch from './useFetch';
 
- function App() {
+function App() {
+  const { data: blogs, setData: setBlogs, isPending, error } = useFetch('/SimpleReactBlog/blogs.json', []);
 
   return (
-    <Router>
     <div className="App">
-      <Navbar a/>
-       <div className="content">
+      <Navbar />
+      <div className="content">
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home blogs={blogs} isPending={isPending} error={error} />
           </Route>
           <Route exact path="/create">
-            <Create />
+            <Create blogs={blogs} setBlogs={setBlogs} />
           </Route>
           <Route exact path="/blogs/:id">
-             <BlogDetails />
+            <BlogDetails blogs={blogs} setBlogs={setBlogs} />
           </Route>
           <Route exact path="*">
             <NotFound />
           </Route>
         </Switch>
-        </div>
+      </div>
     </div>
-    </Router>
-  ); 
+  );
 }
 
 export default App;

@@ -1,32 +1,31 @@
-import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
-import useFetch from "./useFetch";
+import { useHistory, useParams } from "react-router-dom";
 
-const BlogDetails = () => {
-    const { id } = useParams();
-    const { data:blog, error, isPending} = useFetch('http://localhost:8000/blogs/'+id);
-    const history=useHistory();
-    const handleClick= () => {
-        fetch('http://localhost:8000/blogs/'+blog.id,{
-                method:"DELETE"
-        }).then(()=>{
-            history.push('/');
-        }); 
-    }
+const BlogDetails = ({ blogs, setBlogs }) => {
+  const { id } = useParams();
+  const history = useHistory();
+  const blog = blogs.find(blog => blog.id === parseInt(id)); // Find blog from state
 
-    return (
-    <div className="blog-details"> 
-    {isPending && <div>Loading...</div>}
-    {error && <div>{error}</div>}
-    {blog && (
+  const handleClick = () => {
+    // Client-side deletion
+    const newBlogs = blogs.filter(b => b.id !== parseInt(id));
+    setBlogs(newBlogs);
+    history.push('/');
+  };
+
+  return (
+    <div className="blog-details">
+      {blog ? (
         <article>
-            <h2>{blog.title}</h2>
-            <p>Written by {blog.author}</p>
-            <div>{blog.body}</div>
-            <button onClick={handleClick}>Delete</button>
+          <h2>{blog.title}</h2>
+          <p>Written by {blog.author}</p>
+          <div>{blog.body}</div>
+          <button onClick={handleClick}>Delete</button>
         </article>
-    )}
+      ) : (
+        <div>Blog not found.</div>
+      )}
     </div>
-);
-}
+  );
+};
 
-export default BlogDetails
+export default BlogDetails;
