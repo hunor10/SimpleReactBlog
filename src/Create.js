@@ -1,4 +1,4 @@
-import { useState } from "react"; // Removed unused 'use' import
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const Create = ({ blogs, setBlogs }) => {
@@ -10,7 +10,7 @@ const Create = ({ blogs, setBlogs }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { id: Date.now(), title, body, author }; // Use timestamp as ID
+    const blog = { id: Date.now(), title, body, author };
     setIsPending(true);
 
     // Update the blogs state with the new blog
