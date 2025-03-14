@@ -1,0 +1,34 @@
+{
+  "blogs": [
+    {
+      "title": "My First Blog",
+      "body": "why do we use it?\nIt is a  long established fact that a reader will be distractedLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada ligula ac magna tincidunt, id commodo ex suscipit. Donec volutpat efficitur pellentesque. Fusce ornare id turpis vitae facilisis. Nullam varius felis in tortor auctor ullamcorper. Praesent non sem sit amet turpis consectetur euismod non ut arcu. Proin egestas nibh arcu, a ultrices augue rutrum sit amet. Quisque in volutpat erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec id ultrices nunc, quis faucibus sapien. Mauris ut augue pretium, bibendum leo quis, tincidunt metus. Nulla quis rutrum libero. Quisque consectetur varius egestas. Proin egestas, tortor ac eleifend suscipit, metus augue sollicitudin mauris, a accumsan risus quam eu risus. Nullam ut elit ut est sodales facilisis eu et ipsum. Suspendisse placerat facilisis dictum....",
+      "author": "mario",
+      "id": "1"
+    },
+    {
+      "title": "Opening Part!",
+      "body": "Why do we use it?\nIt is a long established fact that a reader will be distractedLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada ligula ac magna tincidunt, id commodo ex suscipit. Donec volutpat efficitur pellentesque. Fusce ornare id turpis vitae facilisis. Nullam varius felis in tortor auctor ullamcorper. Praesent non sem sit amet turpis consectetur euismod non ut arcu. Proin egestas nibh arcu, a ultrices augue rutrum sit amet. Quisque in volutpat erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec id ultrices nunc, quis faucibus sapien. Mauris ut augue pretium, bibendum leo quis, tincidunt metus. Nulla quis rutrum libero. Quisque consectetur varius egestas. Proin egestas, tortor ac eleifend suscipit, metus augue sollicitudin mauris, a accumsan risus quam eu risus. Nullam ut elit ut est sodales facilisis eu et ipsum. Suspendisse placerat facilisis dictum....",
+      "author": "yoshi",
+      "id": "2"
+    },
+    {
+      "id": "c855",
+      "title": "asd",
+      "body": "asd",
+      "author": "mario"
+    },
+    {
+      "id": "778f",
+      "title": "asd",
+      "body": "asd",
+      "author": "mario"
+    },
+    {
+      "id": "b007",
+      "title": "Ninjas",
+      "body": "Hello, ninjas",
+      "author": "mario"
+    }
+  ]
+}
