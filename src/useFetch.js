@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 
 const useFetch = (url, initialData = []) => {
   const [data, setData] = useState(() => {
-    // Load from localStorage if available, otherwise use initialData
     const savedData = localStorage.getItem('blogs');
     return savedData ? JSON.parse(savedData) : initialData;
   });
@@ -10,6 +9,10 @@ const useFetch = (url, initialData = []) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!url) {
+      setIsPending(false);
+      return;
+    }
     const abortCont = new AbortController();
     setTimeout(() => {
       fetch(url, { signal: abortCont.signal })
@@ -21,7 +24,7 @@ const useFetch = (url, initialData = []) => {
         .then(fetchedData => {
           console.log(fetchedData);
           setData(fetchedData);
-          localStorage.setItem('blogs', JSON.stringify(fetchedData)); // Save initial fetch to localStorage
+          localStorage.setItem('blogs', JSON.stringify(fetchedData));
           setIsPending(false);
           setError(null);
         })
@@ -37,7 +40,6 @@ const useFetch = (url, initialData = []) => {
     return () => abortCont.abort();
   }, [url]);
 
-  // Save to localStorage whenever data changes
   useEffect(() => {
     localStorage.setItem('blogs', JSON.stringify(data));
   }, [data]);

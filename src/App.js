@@ -4,11 +4,13 @@ import { Route, Switch } from 'react-router-dom';
 import Create from './Create';
 import BlogDetails from './BlogDetails';
 import NotFound from './NotFound';
-import { useState, useEffect } from 'react';
 import useFetch from './useFetch';
 
 function App() {
-  const { data: blogs, setData: setBlogs, isPending, error } = useFetch('/SimpleReactBlog/blogs.json', []);
+  const initialBlogs = [
+    { id: 1, title: "My First Blog", body: "This is the content of my first blog post.", author: "mario" }
+  ];
+  const { data: blogs, setData: setBlogs, isPending, error } = useFetch(null, initialBlogs);
 
   return (
     <div className="App">
