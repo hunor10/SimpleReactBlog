@@ -24,4 +24,17 @@ A dynamic blog application built with React, featuring CRUD operations, client-s
 ## Installation
 To run this project locally, follow these steps:
 
-1. Clone the repository:
+1. Clone the repository: git clone https://github.com/hunor10/SimpleReactBlog.git
+2. Navigate to the project directory: cd SimpleReactBlog
+3. Install dependencies: npm install
+4. Start the development server: npm start
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## Usage
+- Visit the live demo or run locally to add, view, and delete blog posts.
+- Use the navigation bar to switch between the Home page and the Create page.
+- Add a new blog by filling out the form and clicking "Add blog."
+- Delete a blog from its details page.
+
+
+ 
